@@ -44,11 +44,11 @@ void perl_destroy() {
 }
 
 void perl_exec(char *s) {
-  perl_eval_pv(s, TRUE);
+  eval_pv(s, TRUE);
 }
 
 char * perl_getstring(char *s) {
-	return SvPV(perl_get_sv(s, FALSE), PL_na);
+	return SvPV(get_sv(s, FALSE), PL_na);
 }
 
 /* eof *******************************************************************/
