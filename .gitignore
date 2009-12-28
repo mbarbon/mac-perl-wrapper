@@ -1,0 +1,6 @@
+build
+Perl-Libraries/*
+Perl-Resources/*
+Perl-Source/*
+Libraries/*
+.DS_Store
