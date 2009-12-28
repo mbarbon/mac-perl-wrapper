@@ -51,8 +51,8 @@ int main(int argc, char* argv[], char** env) {
 	perl_exec(source);
 
 	sprintf(source, 
-        "use lib ('%s/Perl-Source', '%s/Perl-Libraries'); eval { require 'main.pl' }; $PerlWrapper::Error = $@; ",
-	    sPath, sPath);	
+		"@INC= ('%s/Perl-Source', '%s/Perl-Libraries'); eval { require 'main.pl' }; $PerlWrapper::Error = $@; ",
+		sPath, sPath);
 	perl_exec(source);
 	
 	char *err = perl_getstring("PerlWrapper::Error");
