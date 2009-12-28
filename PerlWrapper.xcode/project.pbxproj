@@ -1,0 +1,636 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 39;
+	objects = {
+		0249A66BFF388E3F11CA2CEA = {
+			isa = PBXFileReference;
+			lastKnownFileType = archive.ar;
+			name = "libstdc++.a";
+			path = "/usr/lib/libstdc++.a";
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+//020
+//021
+//022
+//023
+//024
+//080
+//081
+//082
+//083
+//084
+		0867D6AAFE840B52C02AAC07 = {
+			children = (
+				0867D6ABFE840B52C02AAC07,
+				2780B5DF0677384600F73FF0,
+				2780B5E00677384C00F73FF0,
+				2780B5E10677385000F73FF0,
+				2780B5E20677385400F73FF0,
+				2780B5E30677385900F73FF0,
+				2780B5E40677385C00F73FF0,
+				2780B5E50677385F00F73FF0,
+				2780B5E60677386200F73FF0,
+				2780B5E70677386900F73FF0,
+				2780B5E80677386C00F73FF0,
+				2780B5E90677386F00F73FF0,
+				2780B5EA0677387200F73FF0,
+				2780B5EB0677387800F73FF0,
+				2780B5EC0677387B00F73FF0,
+			);
+			isa = PBXVariantGroup;
+			name = InfoPlist.strings;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		0867D6ABFE840B52C02AAC07 = {
+			fileEncoding = 10;
+			isa = PBXFileReference;
+			lastKnownFileType = text.plist.strings;
+			name = English;
+			path = English.lproj/InfoPlist.strings;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//080
+//081
+//082
+//083
+//084
+//190
+//191
+//192
+//193
+//194
+		195DF8CFFE9D517E11CA2CBB = {
+			children = (
+				8D0C4E970486CD37000505A6,
+			);
+			isa = PBXGroup;
+			name = Products;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+//190
+//191
+//192
+//193
+//194
+//200
+//201
+//202
+//203
+//204
+		20286C28FDCF999611CA2CEA = {
+			buildSettings = {
+			};
+			buildStyles = (
+				4A9504C5FFE6A39111CA0CBA,
+				4A9504C6FFE6A39111CA0CBA,
+			);
+			hasScannedForEncodings = 1;
+			isa = PBXProject;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				zh_TW,
+				zh_CN,
+				sv,
+				Spanish,
+				pt,
+				no,
+				ko,
+				Italian,
+				fi,
+				Dutch,
+				da,
+			);
+			mainGroup = 20286C29FDCF999611CA2CEA;
+			projectDirPath = "";
+			targets = (
+				8D0C4E890486CD37000505A6,
+			);
+		};
+		20286C29FDCF999611CA2CEA = {
+			children = (
+				27423300067A4F6800C9EE46,
+				20286C2CFDCF999611CA2CEA,
+				20286C32FDCF999611CA2CEA,
+				195DF8CFFE9D517E11CA2CBB,
+			);
+			isa = PBXGroup;
+			name = PerlWrapper;
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		20286C2CFDCF999611CA2CEA = {
+			children = (
+				2730B8170677CBA900F45DA2,
+				2730B7F30677CB8D00F45DA2,
+				2730B7F50677CB8D00F45DA2,
+				8D0C4E960486CD37000505A6,
+				0867D6AAFE840B52C02AAC07,
+				277400A0067A7CA60037FD55,
+			);
+			isa = PBXGroup;
+			path = Resources;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		20286C32FDCF999611CA2CEA = {
+			children = (
+				2741FF6A0677333B001479D8,
+				2799346506767DDF009777A3,
+				20286C33FDCF999611CA2CEA,
+				4A9504CAFFE6A41611CA0CBA,
+				4A9504C8FFE6A3BC11CA0CBA,
+				0249A66BFF388E3F11CA2CEA,
+			);
+			isa = PBXGroup;
+			name = "External Frameworks and Libraries";
+			path = "";
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		20286C33FDCF999611CA2CEA = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.framework;
+			name = Carbon.framework;
+			path = /System/Library/Frameworks/Carbon.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+//200
+//201
+//202
+//203
+//204
+//270
+//271
+//272
+//273
+//274
+		2730B7F30677CB8D00F45DA2 = {
+			isa = PBXFileReference;
+			lastKnownFileType = folder;
+			path = "Perl-Libraries";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		2730B7F50677CB8D00F45DA2 = {
+			isa = PBXFileReference;
+			lastKnownFileType = folder;
+			path = Libraries;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		2730B8150677CB8D00F45DA2 = {
+			fileRef = 2730B7F30677CB8D00F45DA2;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		2730B8160677CB8D00F45DA2 = {
+			fileRef = 2730B7F50677CB8D00F45DA2;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		2730B8170677CBA900F45DA2 = {
+			isa = PBXFileReference;
+			lastKnownFileType = folder;
+			path = "Perl-Source";
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		2730B81B0677CBA900F45DA2 = {
+			fileRef = 2730B8170677CBA900F45DA2;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		2741FF6A0677333B001479D8 = {
+			isa = PBXFileReference;
+			lastKnownFileType = "compiled.mach-o.dylib";
+			name = libdl.dylib;
+			path = /usr/lib/libdl.dylib;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		2741FF6B0677333B001479D8 = {
+			fileRef = 2741FF6A0677333B001479D8;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		27423300067A4F6800C9EE46 = {
+			children = (
+				27423301067A4F6800C9EE46,
+				27423302067A4F6800C9EE46,
+				27423303067A4F6800C9EE46,
+				32DBCF6D0370B57F00C91783,
+			);
+			isa = PBXGroup;
+			path = Source;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		27423301067A4F6800C9EE46 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			path = main.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		27423302067A4F6800C9EE46 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.c;
+			path = PerlInterpreter.c;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		27423303067A4F6800C9EE46 = {
+			fileEncoding = 30;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = PerlInterpreter.h;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		27423304067A4F6800C9EE46 = {
+			fileRef = 27423301067A4F6800C9EE46;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		27423305067A4F6800C9EE46 = {
+			fileRef = 27423302067A4F6800C9EE46;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		27423306067A4F6800C9EE46 = {
+			fileRef = 27423303067A4F6800C9EE46;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		277400A0067A7CA60037FD55 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.icns;
+			path = PerlWrapperApp.icns;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		277400A1067A7CA60037FD55 = {
+			fileRef = 277400A0067A7CA60037FD55;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		2780B5DF0677384600F73FF0 = {
+			isa = PBXFileReference;
+			lastKnownFileType = text.plist.strings;
+			name = zh_TW;
+			path = zh_TW.lproj/InfoPlist.strings;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		2780B5E00677384C00F73FF0 = {
+			isa = PBXFileReference;
+			lastKnownFileType = text.plist.strings;
+			name = zh_CN;
+			path = zh_CN.lproj/InfoPlist.strings;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		2780B5E10677385000F73FF0 = {
+			isa = PBXFileReference;
+			lastKnownFileType = text.plist.strings;
+			name = sv;
+			path = sv.lproj/InfoPlist.strings;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		2780B5E20677385400F73FF0 = {
+			isa = PBXFileReference;
+			lastKnownFileType = text.plist.strings;
+			name = Spanish;
+			path = Spanish.lproj/InfoPlist.strings;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		2780B5E30677385900F73FF0 = {
+			isa = PBXFileReference;
+			lastKnownFileType = text.plist.strings;
+			name = pt;
+			path = pt.lproj/InfoPlist.strings;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		2780B5E40677385C00F73FF0 = {
+			isa = PBXFileReference;
+			lastKnownFileType = text.plist.strings;
+			name = no;
+			path = no.lproj/InfoPlist.strings;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		2780B5E50677385F00F73FF0 = {
+			isa = PBXFileReference;
+			lastKnownFileType = text.plist.strings;
+			name = ko;
+			path = ko.lproj/InfoPlist.strings;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		2780B5E60677386200F73FF0 = {
+			isa = PBXFileReference;
+			lastKnownFileType = text.plist.strings;
+			name = Japanese;
+			path = Japanese.lproj/InfoPlist.strings;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		2780B5E70677386900F73FF0 = {
+			isa = PBXFileReference;
+			lastKnownFileType = text.plist.strings;
+			name = Italian;
+			path = Italian.lproj/InfoPlist.strings;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		2780B5E80677386C00F73FF0 = {
+			isa = PBXFileReference;
+			lastKnownFileType = text.plist.strings;
+			name = German;
+			path = German.lproj/InfoPlist.strings;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		2780B5E90677386F00F73FF0 = {
+			isa = PBXFileReference;
+			lastKnownFileType = text.plist.strings;
+			name = French;
+			path = French.lproj/InfoPlist.strings;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		2780B5EA0677387200F73FF0 = {
+			isa = PBXFileReference;
+			lastKnownFileType = text.plist.strings;
+			name = fi;
+			path = fi.lproj/InfoPlist.strings;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		2780B5EB0677387800F73FF0 = {
+			isa = PBXFileReference;
+			lastKnownFileType = text.plist.strings;
+			name = Dutch;
+			path = Dutch.lproj/InfoPlist.strings;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		2780B5EC0677387B00F73FF0 = {
+			isa = PBXFileReference;
+			lastKnownFileType = text.plist.strings;
+			name = da;
+			path = da.lproj/InfoPlist.strings;
+			refType = 4;
+			sourceTree = "<group>";
+		};
+		2799346506767DDF009777A3 = {
+			isa = PBXFileReference;
+			lastKnownFileType = "compiled.mach-o.dylib";
+			name = libperl.dylib;
+			path = "/System/Library/Perl/5.8.1/darwin-thread-multi-2level/CORE/libperl.dylib";
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		2799346606767DDF009777A3 = {
+			fileRef = 2799346506767DDF009777A3;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+//270
+//271
+//272
+//273
+//274
+//320
+//321
+//322
+//323
+//324
+		32DBCF6D0370B57F00C91783 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.c.h;
+			path = PerlWrapper_Prefix.pch;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+//320
+//321
+//322
+//323
+//324
+//4A0
+//4A1
+//4A2
+//4A3
+//4A4
+		4A9504C5FFE6A39111CA0CBA = {
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OPTIMIZATION_CFLAGS = "-O0";
+				ZERO_LINK = YES;
+			};
+			isa = PBXBuildStyle;
+			name = Development;
+		};
+		4A9504C6FFE6A39111CA0CBA = {
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				ZERO_LINK = NO;
+			};
+			isa = PBXBuildStyle;
+			name = Deployment;
+		};
+		4A9504C8FFE6A3BC11CA0CBA = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.framework;
+			name = ApplicationServices.framework;
+			path = /System/Library/Frameworks/ApplicationServices.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+		4A9504CAFFE6A41611CA0CBA = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.framework;
+			name = CoreServices.framework;
+			path = /System/Library/Frameworks/CoreServices.framework;
+			refType = 0;
+			sourceTree = "<absolute>";
+		};
+//4A0
+//4A1
+//4A2
+//4A3
+//4A4
+//8D0
+//8D1
+//8D2
+//8D3
+//8D4
+		8D0C4E890486CD37000505A6 = {
+			buildPhases = (
+				8D0C4E8A0486CD37000505A6,
+				8D0C4E8C0486CD37000505A6,
+				8D0C4E8F0486CD37000505A6,
+				8D0C4E910486CD37000505A6,
+				8D0C4E940486CD37000505A6,
+			);
+			buildRules = (
+			);
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_ENABLE_TRIGRAPHS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G4;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = PerlWrapper_Prefix.pch;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = NO;
+				HEADER_SEARCH_PATHS = "($value) ./Sources /System/Library/Perl/5.8.1/darwin-thread-multi-2level/CORE/";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = "\"$(SYSTEM_LIBRARY_DIR)/Perl/5.8.1/darwin-thread-multi-2level/CORE\"";
+				LIBRARY_STYLE = Static;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "/System/Library/Perl/5.8.1/darwin-thread-multi-2level/auto/DynaLoader/DynaLoader.a";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = PerlWrapper;
+				SECTORDER_FLAGS = "";
+				VERSIONING_SYSTEM = "";
+				WARNING_CFLAGS = "-Wmost -Wno-four-char-constants -Wno-unknown-pragmas";
+				WRAPPER_EXTENSION = app;
+			};
+			dependencies = (
+			);
+			isa = PBXNativeTarget;
+			name = PerlWrapper;
+			productInstallPath = "$(HOME)/Applications";
+			productName = PerlWrapper;
+			productReference = 8D0C4E970486CD37000505A6;
+			productType = "com.apple.product-type.application";
+		};
+		8D0C4E8A0486CD37000505A6 = {
+			buildActionMask = 2147483647;
+			files = (
+				8D0C4E8B0486CD37000505A6,
+				27423306067A4F6800C9EE46,
+			);
+			isa = PBXHeadersBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D0C4E8B0486CD37000505A6 = {
+			fileRef = 32DBCF6D0370B57F00C91783;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		8D0C4E8C0486CD37000505A6 = {
+			buildActionMask = 2147483647;
+			files = (
+				8D0C4E8D0486CD37000505A6,
+				2730B8150677CB8D00F45DA2,
+				2730B8160677CB8D00F45DA2,
+				2730B81B0677CBA900F45DA2,
+				277400A1067A7CA60037FD55,
+			);
+			isa = PBXResourcesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D0C4E8D0486CD37000505A6 = {
+			fileRef = 0867D6AAFE840B52C02AAC07;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		8D0C4E8F0486CD37000505A6 = {
+			buildActionMask = 2147483647;
+			files = (
+				27423304067A4F6800C9EE46,
+				27423305067A4F6800C9EE46,
+			);
+			isa = PBXSourcesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D0C4E910486CD37000505A6 = {
+			buildActionMask = 2147483647;
+			files = (
+				8D0C4E920486CD37000505A6,
+				8D0C4E930486CD37000505A6,
+				2799346606767DDF009777A3,
+				2741FF6B0677333B001479D8,
+			);
+			isa = PBXFrameworksBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D0C4E920486CD37000505A6 = {
+			fileRef = 20286C33FDCF999611CA2CEA;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		8D0C4E930486CD37000505A6 = {
+			fileRef = 0249A66BFF388E3F11CA2CEA;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		8D0C4E940486CD37000505A6 = {
+			buildActionMask = 2147483647;
+			files = (
+			);
+			isa = PBXRezBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D0C4E960486CD37000505A6 = {
+			fileEncoding = 4;
+			isa = PBXFileReference;
+			lastKnownFileType = text.xml;
+			path = Info.plist;
+			refType = 2;
+			sourceTree = SOURCE_ROOT;
+		};
+		8D0C4E970486CD37000505A6 = {
+			explicitFileType = wrapper.application;
+			includeInIndex = 0;
+			isa = PBXFileReference;
+			path = PerlWrapper.app;
+			refType = 3;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+	};
+	rootObject = 20286C28FDCF999611CA2CEA;
+}
