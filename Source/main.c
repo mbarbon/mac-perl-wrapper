@@ -51,7 +51,7 @@ int main(int argc, char* argv[], char** env) {
 	perl_exec(source);
 
 	sprintf(source, 
-		"@INC= ('%s/Perl-Source', '%s/Perl-Libraries'); eval { require 'main.pl' }; $PerlWrapper::Error = $@; ",
+		"unshift @INC, '%s/Perl-Source', '%s/Perl-Libraries'; eval { require 'main.pl' }; $PerlWrapper::Error = $@; ",
 		sPath, sPath);
 	perl_exec(source);
 	
