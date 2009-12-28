@@ -70,10 +70,10 @@ foreach my $ref (sort keys %dylib_refs) {
         next;
     }
     
-    print "Changing '$ref'\n      to '$prefix_dylib$newref'\n";
+    print "Changing '$ref'\n      to '$prefix_dylib/$newref'\n";
     foreach my $lib (@{$dylib_refs{$ref}}) {
         print "      in $lib\n";
-        `$install_name_tool -change $ref $prefix_dylib$newref $lib`;
+        `$install_name_tool -change $ref $prefix_dylib/$newref $lib`;
         $c++;
     }
 }
