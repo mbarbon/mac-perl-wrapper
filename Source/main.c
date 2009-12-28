@@ -14,14 +14,14 @@
 #include <Carbon/Carbon.h> // kAlertStopAlert
 #include <perlinterpreter.h>
 
-int main(int argc, char* argv[]) {
+int main(int argc, char* argv[], char** env) {
 	CFBundleRef mainBundle;
 	CFURLRef myURL;
 	FSRef fsref;
 	char sPath[1024];
 	char source[2200];
 
-	perl_init();
+	perl_init(&argc,&argv,&env);
 	perl_exec("$PerlWrapper::Version = '0.1'");
 
 	mainBundle = CFBundleGetMainBundle();

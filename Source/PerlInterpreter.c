@@ -25,7 +25,9 @@ EXTERN_C void xs_init(pTHX) {
 	newXS("DynaLoader::boot_DynaLoader", boot_DynaLoader, file);
 }
 
-void perl_init() {
+void perl_init(int* argcp, char*** argvp, char*** envp) {
+  PERL_SYS_INIT3(argcp, argvp, envp);
+
   char *embedding[] = { "", "-e", "0" };
 
   my_perl = perl_alloc();
@@ -37,6 +39,8 @@ void perl_init() {
 void perl_destroy() {
   perl_destruct(my_perl);
   perl_free(my_perl);
+
+  PERL_SYS_TERM();
 }
 
 void perl_exec(char *s) {

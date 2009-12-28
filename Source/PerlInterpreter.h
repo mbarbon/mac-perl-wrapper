@@ -8,7 +8,7 @@
  */
 
 /* Initialize perl interpreter */
-void perl_init();
+void perl_init(int* argcp, char*** argvp, char*** envp);
 
 /* Destroy perl interpreter */
 void perl_destroy();
