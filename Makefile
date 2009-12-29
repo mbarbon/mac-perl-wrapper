@@ -36,10 +36,10 @@ C_HEADERS= \
 all: bundle
 
 bundle: $(BUNDLE_DIRS) $(BUNDLE_FILES)
-	cp -af Perl-Libraries/ $(BUNDLE_RESOURCES)/Perl-Libraries
-	cp -af Libraries/ $(BUNDLE_RESOURCES)/Libraries
-	cp -af Perl-Resources/ $(BUNDLE_RESOURCES)
-	cp -af Perl-Source/ $(BUNDLE_RESOURCES)/Perl-Source
+	cp -pPRf Perl-Libraries/ $(BUNDLE_RESOURCES)/Perl-Libraries
+	cp -pPRf Libraries/ $(BUNDLE_RESOURCES)/Libraries
+	cp -pPRf Perl-Resources/ $(BUNDLE_RESOURCES)
+	cp -pPRf Perl-Source/ $(BUNDLE_RESOURCES)/Perl-Source
 
 # resources
 
