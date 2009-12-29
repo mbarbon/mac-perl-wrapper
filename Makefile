@@ -35,11 +35,14 @@ C_HEADERS= \
 
 all: bundle
 
-bundle: $(BUNDLE_DIRS) $(BUNDLE_FILES)
+bundle: $(BUNDLE_DIRS) $(BUNDLE_FILES) fix_dylibs
 	cp -pPRf Perl-Libraries/ $(BUNDLE_RESOURCES)/Perl-Libraries
 	cp -pPRf Libraries/ $(BUNDLE_RESOURCES)/Libraries
 	cp -pPRf Perl-Resources/ $(BUNDLE_RESOURCES)
 	cp -pPRf Perl-Source/ $(BUNDLE_RESOURCES)/Perl-Source
+
+fix_dylibs:
+	cd Tools && perl update_dylib_references.pl
 
 # resources
 
