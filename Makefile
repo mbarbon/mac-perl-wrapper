@@ -8,6 +8,9 @@
 BUNDLE=PerlWrapper
 ICON_FILE=PerlWrapperApp
 PERL=/usr/bin/perl
+OSX_SDK=10.4u
+OSX_VERSION=10.4
+ARCHITECTURES=-arch i386 -arch ppc
 
 BUNDLE_DIR=build/$(BUNDLE).app
 BUNDLE_CONTENTS=build/$(BUNDLE).app/Contents
@@ -49,8 +52,10 @@ $(BUNDLE_RESOURCES)/$(ICON_FILE).icns: Resources/$(ICON_FILE).icns
 # application
 
 $(BUNDLE_BIN)/$(BUNDLE): $(C_SOURCES) $(C_HEADERS)
-	$(CC) $(C_SOURCES) -I"Source" -Wall -o $@ \
-	    `$(PERL) -MExtUtils::Embed -e ccopts -e ldopts` \
+	$(CC) $(C_SOURCES) $(ARCHITECTURES) -I"Source" -Wall -o $@ \
+	    `$(PERL) ./Tools/embed_flags.pl` \
+	    -isysroot /Developer/SDKs/MacOSX$(OSX_SDK).sdk \
+	    -mmacosx-version-min=$(OSX_VERSION) \
 	    -framework CoreFoundation -framework CoreServices
 
 # directories
