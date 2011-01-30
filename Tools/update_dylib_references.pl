@@ -20,7 +20,7 @@ my $otool = 'otool';
 my $dir_dylib = '../Libraries/';
 my $dir_perllib = '../Perl-Libraries/';
 
-my $prefix_dylib = 'Contents/Resources/Libraries';
+my $prefix_dylib = '@executable_path/../Resources/Libraries';
 
 my @dylibs = ();
 my %dylib_refs = ();
