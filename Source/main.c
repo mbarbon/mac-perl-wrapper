@@ -73,7 +73,7 @@ int main(int argc, char* argv[], char** env) {
 	perl_exec(source);
 	
 	char *err = perl_getstring("PerlWrapper::Error");
-	if (strlen(err) > 0) {
+	if (err && strlen(err) > 0) {
 		CFOptionFlags btnhit;
 
 		printf("[Wrapped Perl Application] Perl Error:\n%s\n", err);

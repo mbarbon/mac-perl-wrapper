@@ -48,7 +48,12 @@ void perl_exec(char *s) {
 }
 
 char * perl_getstring(char *s) {
-	return SvPV(get_sv(s, FALSE), PL_na);
+  SV *sv = get_sv(s, FALSE);
+
+  if (!sv)
+    return NULL;
+
+  return SvPV(sv, PL_na);
 }
 
 /* eof *******************************************************************/
