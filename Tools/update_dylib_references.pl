@@ -19,6 +19,7 @@ my $otool = 'otool';
 
 my $dir_dylib = '../Libraries/';
 my $dir_perllib = '../Perl-Libraries/';
+my $dir_executables = '../../MacOS/';
 
 my $prefix_dylib = '@executable_path/../Resources/Libraries';
 
@@ -52,12 +53,27 @@ sub wanted_dylib_refs {
     }
 }
 
+sub wanted_executable_refs {
+    next unless -x;
+    next unless -r && -f;
+
+    my $out = `$otool -L $_`;
+    my @libs = ($out =~ m|^\s+(/[^ ]+)|mg);
+    
+    foreach my $l (@libs) {
+        push @{$dylib_refs{$l}}, $_;
+    }
+}
+
 print "\nSearching for bundled dylibs in $dir_dylib ...\n";
 find({wanted => \&wanted_dylibs, no_chdir => 1}, $dir_dylib);
 print scalar @dylibs, " dylibs found.\n";
 
 print "Searching for XS bundles in $dir_perllib ...\n";
 find({wanted => \&wanted_dylib_refs, no_chdir => 1}, $dir_perllib);
+
+print "Searching for executables in $dir_executables ...\n";
+find({wanted => \&wanted_executable_refs, no_chdir => 1}, $dir_executables);
 print scalar keys %dylib_refs, " different dylibs references found.\n";
 
 print "Changing references...\n";
