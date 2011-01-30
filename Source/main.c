@@ -14,25 +14,47 @@
 #include <Carbon/Carbon.h> // kAlertStopAlert
 #include <perlinterpreter.h>
 
-int main(int argc, char* argv[], char** env) {
-	CFBundleRef mainBundle;
+int get_bundle_path(char sPath[1024]) {
+	CFBundleRef mainBundle = CFBundleGetMainBundle();
 	CFURLRef myURL;
 	FSRef fsref;
+
+	myURL = CFBundleCopyBundleURL(mainBundle);
+	if (!CFURLGetFSRef (myURL, &fsref)) {
+		printf("[Wrapped Perl Application] Error getting FSRef\n");
+		return 1;
+	}
+	FSRefMakePath(&fsref, (UInt8 *) sPath, 1023);
+
+	return 0;
+}
+
+int get_resource_path(char sPath[1024]) {
+	CFBundleRef mainBundle = CFBundleGetMainBundle();
+	CFURLRef myURL;
+	FSRef fsref;
+
+	myURL = CFBundleCopyResourcesDirectoryURL(mainBundle);
+	if (!CFURLGetFSRef (myURL, &fsref)) {
+		printf("[Wrapped Perl Application] Error getting FSRef\n");
+
+		return 1;
+	}
+	FSRefMakePath(&fsref, (UInt8 *) sPath, 1023);
+
+	return 0;
+}
+
+int main(int argc, char* argv[], char** env) {
 	char sPath[1024];
 	char source[2200];
 
 	perl_init(&argc,&argv,&env);
 	perl_exec("$PerlWrapper::Version = '0.1'");
 
-	mainBundle = CFBundleGetMainBundle();
-
 	// Store bundle path in perl variable
-	myURL = CFBundleCopyBundleURL(mainBundle);
-	if (!CFURLGetFSRef (myURL, &fsref)) {
-		printf("[Wrapped Perl Application] Error getting FSRef\n");
+	if (get_bundle_path(sPath))
 		return 1;
-	}
-	FSRefMakePath(&fsref, (UInt8 *) &sPath, 1023);
 	sprintf(source, "$PerlWrapper::BundlePath = '%s';", sPath);
 	perl_exec(source);
 	
@@ -40,13 +62,8 @@ int main(int argc, char* argv[], char** env) {
 	chdir(sPath);
 
 	// Store resources path in perl variable
-	myURL = CFBundleCopyResourcesDirectoryURL(mainBundle);
-	if (!CFURLGetFSRef (myURL, &fsref)) {
-		printf("[Wrapped Perl Application] Error getting FSRef\n");
-
+	if (get_resource_path(sPath))
 		return 1;
-	}
-	FSRefMakePath(&fsref, (UInt8 *) &sPath, 1023);
 	sprintf(source, "$PerlWrapper::ResourcesPath = '%s'", sPath);
 	perl_exec(source);
 
