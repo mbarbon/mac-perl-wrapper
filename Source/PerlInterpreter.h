@@ -10,6 +10,9 @@
 /* Initialize perl interpreter */
 void perl_init(int* argcp, char*** argvp, char*** envp);
 
+/* Initialize ARGV */
+void perl_init_argv(int argc, char **argv);
+
 /* Destroy perl interpreter */
 void perl_destroy();
 

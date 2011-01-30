@@ -55,23 +55,38 @@ int main(int argc, char* argv[], char** env) {
 	// Store bundle path in perl variable
 	if (get_bundle_path(sPath))
 		return 1;
-	sprintf(source, "$PerlWrapper::BundlePath = '%s';", sPath);
+	sprintf(source,
+		"$PerlWrapper::BundlePath = '%s';"
+		"$^X = '%s/Contents/MacOS/perl';",
+		sPath, sPath);
 	perl_exec(source);
-	
+
 	// Change path so dynamic libraries will be found
 	chdir(sPath);
 
 	// Store resources path in perl variable
 	if (get_resource_path(sPath))
 		return 1;
-	sprintf(source, "$PerlWrapper::ResourcesPath = '%s'", sPath);
-	perl_exec(source);
-
-	sprintf(source, 
-		"unshift @INC, '%s/Perl-Source', '%s/Perl-Libraries'; eval { require 'main.pl' }; $PerlWrapper::Error = $@; ",
+	sprintf(source,
+		"$PerlWrapper::ResourcesPath = '%s';"
+		"@INC = '%s/Perl-Libraries';",
 		sPath, sPath);
 	perl_exec(source);
-	
+
+	if (strcmp(strrchr(argv[0], '/') + 1, "perl") == 0) {
+		perl_init_argv(argc, argv);
+		sprintf(source,
+			"do { do '%s'; 1 } or die",
+			argv[1]);
+		perl_exec(source);
+	}
+	else {
+		sprintf(source,
+			"eval { require '%s/Perl-Source/main.pl' }; $PerlWrapper::Error = $@;",
+			sPath);
+		perl_exec(source);
+	}
+
 	char *err = perl_getstring("PerlWrapper::Error");
 	if (err && strlen(err) > 0) {
 		CFOptionFlags btnhit;

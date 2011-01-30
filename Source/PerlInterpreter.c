@@ -36,6 +36,10 @@ void perl_init(int* argcp, char*** argvp, char*** envp) {
   perl_run(my_perl);
 }
 
+void perl_init_argv(int argc, char **argv) {
+  Perl_init_argv_symbols(my_perl, argc - 1, argv + 1);
+}
+
 void perl_destroy() {
   perl_destruct(my_perl);
   perl_free(my_perl);
