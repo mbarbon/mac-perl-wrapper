@@ -14,6 +14,8 @@
 
 use File::Find;
 
+my $quiet = @ARGV && $ARGV[0] eq '-q';
+
 my $install_name_tool = 'install_name_tool';
 my $otool = 'otool';
 
@@ -25,6 +27,10 @@ my $prefix_dylib = '@executable_path/../Resources/Libraries';
 
 my @dylibs = ();
 my %dylib_refs = ();
+
+sub log_msg {
+    print @_ unless $quiet;
+}
 
 sub wanted_dylibs {
     next unless /\.dylib$/;
@@ -65,35 +71,35 @@ sub wanted_executable_refs {
     }
 }
 
-print "\nSearching for bundled dylibs in $dir_dylib ...\n";
+log_msg("\nSearching for bundled dylibs in $dir_dylib ...\n");
 find({wanted => \&wanted_dylibs, no_chdir => 1}, $dir_dylib);
-print scalar @dylibs, " dylibs found.\n";
+log_msg(scalar @dylibs, " dylibs found.\n");
 
-print "Searching for XS bundles in $dir_perllib ...\n";
+log_msg("Searching for XS bundles in $dir_perllib ...\n");
 find({wanted => \&wanted_dylib_refs, no_chdir => 1}, $dir_perllib);
 
-print "Searching for executables in $dir_executables ...\n";
+log_msg("Searching for executables in $dir_executables ...\n");
 find({wanted => \&wanted_executable_refs, no_chdir => 1}, $dir_executables);
-print scalar keys %dylib_refs, " different dylibs references found.\n";
+log_msg(scalar keys %dylib_refs, " different dylibs references found.\n");
 
-print "Changing references...\n";
+log_msg("Changing references...\n");
 my $c = 0;
 foreach my $ref (sort keys %dylib_refs) {
     my ($newref) = grep { $ref =~ /$_$/ } @dylibs;
     
     unless ($newref) {
-        print "References to $ref remain unchanged\n";
+        log_msg("References to $ref remain unchanged\n");
         next;
     }
     
-    print "Changing '$ref'\n      to '$prefix_dylib/$newref'\n";
+    log_msg("Changing '$ref'\n      to '$prefix_dylib/$newref'\n");
     foreach my $lib (@{$dylib_refs{$ref}}) {
-        print "      in $lib\n";
+        log_msg("      in $lib\n");
         `$install_name_tool -change $ref $prefix_dylib/$newref $lib`;
         $c++;
     }
 }
-print "$c references changed.\n\n";
+log_msg("$c references changed.\n\n");
     
 # - eot -------------------------------------------------------------------
 
