@@ -76,7 +76,7 @@ int main(int argc, char* argv[], char** env) {
 	if (strcmp(strrchr(argv[0], '/') + 1, "perl") == 0) {
 		perl_init_argv(argc, argv);
 		sprintf(source,
-			"do { do '%s'; 1 } or die",
+			"eval { require '%s'; 1 } or die",
 			argv[1]);
 		perl_exec(source);
 	}
