@@ -94,7 +94,7 @@ int main(int argc, char* argv[], char** env) {
 		printf("[Wrapped Perl Application] Perl Error:\n%s\n", err);
 		CFStringRef caption = CFStringCreateWithCString(kCFAllocatorSystemDefault, "Perl Error", kCFStringEncodingUTF8);
 		CFStringRef message = CFStringCreateWithCString(kCFAllocatorSystemDefault, err, kCFStringEncodingUTF8);
-		OSStatus err = CFUserNotificationDisplayAlert(
+		CFUserNotificationDisplayAlert(
 		    0, kAlertStopAlert, NULL, NULL, NULL, caption, message,
 		    NULL, NULL, NULL, &btnhit );
 		CFRelease(caption);
